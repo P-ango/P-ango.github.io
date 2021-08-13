@@ -152,6 +152,104 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-如何使用git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/13/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8git/">如何使用git</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/13/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8git/" class="archive-article-date">
+  	<time datetime="2021-08-13T04:25:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="git操作"><a href="#git操作" class="headerlink" title="git操作"></a>git操作</h1><h4 id="1-常见git命令"><a href="#1-常见git命令" class="headerlink" title="1.常见git命令"></a>1.常见git命令</h4><img src="/2021/08/13/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8git/Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210719150414284.png" alt="image-20210719150414284" style="zoom:67%;">
+
+<h4 id="2-环境配置"><a href="#2-环境配置" class="headerlink" title="2.环境配置"></a>2.环境配置</h4><h5 id="1-查看配置信息"><a href="#1-查看配置信息" class="headerlink" title="1.查看配置信息"></a>1.查看配置信息</h5><p>​    <img src="/2021/08/13/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8git/Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210719152210501.png" alt="image-20210719152210501" style="zoom:67%;"></p>
+<h5 id="2-修改用户配置命令"><a href="#2-修改用户配置命令" class="headerlink" title="2.修改用户配置命令"></a>2.修改用户配置命令</h5><p>​       修改用户名：git config –global  username  xxx</p>
+<p>​       修改邮箱：git config –global  email xxx</p>
+<h4 id="3-git的基本核心理论"><a href="#3-git的基本核心理论" class="headerlink" title="3.git的基本核心理论"></a>3.git的基本核心理论</h4><h5 id="1-git三个仓库功能"><a href="#1-git三个仓库功能" class="headerlink" title="1.git三个仓库功能"></a>1.git三个仓库功能</h5><p>​         工作目录：就是自己电脑上需要开发项目的目录。(有一个git隐藏文件，head文件表示将代码提交到本地仓库哪个分支下。)</p>
+<p>​         缓存区：用于临时存放你的改动，实际上只是一个文件，保存即将提交的信息。</p>
+<p>​         资源库：即本地存放资源的地方，你的所有版本信息都存放在这个资源库，head 指向 存放文件的分支。</p>
+<p>​    <img src="/2021/08/13/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8git/Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210719155544381.png" alt="image-20210719155544381" style="zoom:67%;"></p>
+<h5 id="2-git的工作流程"><a href="#2-git的工作流程" class="headerlink" title="2.git的工作流程"></a>2.git的工作流程</h5><h5 id><a href="#" class="headerlink" title></a><img src="/2021/08/13/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8git/Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210719155446297.png" alt="image-20210719155446297"></h5><h4 id="4-git项目搭建"><a href="#4-git项目搭建" class="headerlink" title="4.git项目搭建"></a>4.git项目搭建</h4><p>​        1.1 构造一个全新的仓库。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在当前目录构建一个git代码库</span></span><br><span class="line">git init <span class="comment">//默认提交到main分支，这个目录所有的版本信息都在这个git代码库中</span></span><br></pre></td></tr></table></figure>
+
+<p>​        1.2 克隆远程仓库</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在所需目录克隆远程仓库</span></span><br><span class="line">git clone url <span class="comment">//例如https://gitee.com/pan-kaixin/vue_test.git</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-git文件操作"><a href="#5-git文件操作" class="headerlink" title="5.git文件操作"></a>5.git文件操作</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status<span class="comment">//查看文件的状态</span></span><br></pre></td></tr></table></figure>
+
+<p>​       Untracked 状态：未被跟踪</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加所有文件到暂缓区</span></span><br><span class="line"> git add .</span><br></pre></td></tr></table></figure>
+
+<p>​       Staged 状态：表示该文件已经被加入到了暂存区</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m + 提交信息  <span class="comment">//提交暂缓区的所有内容到本地仓库</span></span><br></pre></td></tr></table></figure>
+
+<p>​        Unmodify：文件已经入库，但是没有被修改</p>
+<p>​        modified ：文件已修改，只是修改，没有做其他操作。</p>
+<h4 id="6-忽略文件"><a href="#6-忽略文件" class="headerlink" title="6.忽略文件"></a>6.忽略文件</h4><img src="/2021/08/13/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8git/Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210719164305375.png" alt="image-20210719164305375" style="zoom:80%;">
+
+<h4 id="7-git分支"><a href="#7-git分支" class="headerlink" title="7.git分支"></a>7.git分支</h4><h5 id="1-分支命令："><a href="#1-分支命令：" class="headerlink" title="1.分支命令："></a>1.分支命令：</h5><p><img src="/2021/08/13/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8git/Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210804224601514.png" alt="image-20210804224601514"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 切换分支</span></span><br><span class="line">git checkout xxx</span><br><span class="line"><span class="comment">// 将代码提交至远程仓库</span></span><br><span class="line">git push origin xxx</span><br></pre></td></tr></table></figure>
+
+<img src="/2021/08/13/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8git/Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210719173904947.png" alt="image-20210719173904947" style="zoom: 80%;">
+
+<h5 id="2-注意事项"><a href="#2-注意事项" class="headerlink" title="2.注意事项"></a>2.注意事项</h5><p>​         1.合并分支时，当二个项目的代码有冲突时，应该先协商好代码，再进行合并。</p>
+<p>​         2. 应该是将稳定的版本使用到主分支上，测试版本应该在其他分支上使用。</p>
+<h4 id="8-提交代码到远程仓库"><a href="#8-提交代码到远程仓库" class="headerlink" title="8.提交代码到远程仓库"></a>8.提交代码到远程仓库</h4><h5 id="-1"><a href="#-1" class="headerlink" title></a></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin <span class="comment">//将本地仓库与远程仓库解绑</span></span><br><span class="line">git remote add origin [url] <span class="comment">//将本地仓库与远程仓库绑定</span></span><br><span class="line">git add . <span class="comment">//将代码提交到缓存区 </span></span><br><span class="line">git commit -m +注释<span class="comment">//将缓存区的代码提交到本地仓库</span></span><br><span class="line">git push origin +分支 <span class="comment">//将本地代码提交到远程仓库</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/13/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8git/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-创建hexo博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -305,6 +403,7 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p><img src="/2021/08/12/hello-world/blog\angoBlog\source_posts\hello-world.assets\image-20210813133112550-1628832709174.png" alt="image-20210813133112550"></p>
 
       
 
